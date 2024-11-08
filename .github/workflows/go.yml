@@ -2,7 +2,7 @@ name: Go CI
 
 on:
   push:
-    branches: [ "master" ] 
+    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
   workflow_dispatch: 
@@ -43,6 +43,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
 
     - name: Push Docker image
       run: docker push matanlp/goimage:latest
